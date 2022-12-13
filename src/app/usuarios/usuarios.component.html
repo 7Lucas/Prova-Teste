@@ -5,4 +5,10 @@
         <td>Username</td>
         <td>Email</td>
     </tr>
+    <tr *ngFor="let dUS of us">
+        <td>{{dUS.id}}</td>
+        <td>{{dUS.name}}</td>
+        <td>{{dUS.username}}</td>
+        <td>{{dUS.email}}</td>
+    </tr>
 </table>

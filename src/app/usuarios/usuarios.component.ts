@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../usuarios.service';
+import { dadosUsuarios } from '../interfaceUsuarios';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getservice: UsuariosService) { }
+
+  us: dadosUsuarios[]=[];
 
   ngOnInit(): void {
+    this.getservice.msUsuarios().subscribe(usuario => this.us = usuario)
   }
-
+  
 }
